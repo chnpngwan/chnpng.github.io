@@ -1,155 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="theme-color" content=#58b77a>
-  <title>IDEA使用教程 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="Chnpng Wng">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
-  <meta name="referrer" content="no-referrer">
-  <script id="hexo-configurations">
-  var CONFIG = {
-    root: '/',
-    theme: 'hexo-theme-lx',
-    version: '0.4.4',
-    localsearch:{
-      "enable": false,
-      "trigger": "auto",
-      "top_n_per_article": 1,
-      "unescape": false,
-      "preload": false
-      },
-    path: 'null'
-  };
-</script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
 
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/css/main.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="一、IDEA下载、安装1、IDEA下载 下载地址：https:&#x2F;&#x2F;www.jetbrains.com&#x2F;idea&#x2F;    2、IDEA安装     3、IDEA激活 获取激活码：https:&#x2F;&#x2F;vrg123.com&#x2F; 密钥：5522   二、IDEA项目空间及模块1、IDEA项目结构IDEA 和 Eclipse 项目结构有些区别：  故IDEA项目结构如下：  2、IDEA创建项目及模块2.1 ID">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IDEA使用教程">
+<meta property="og:url" content="http://example.com/2024/05/31/IDEA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-2023.1.1%E7%89%88%E6%9C%AC/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、IDEA下载、安装1、IDEA下载 下载地址：https:&#x2F;&#x2F;www.jetbrains.com&#x2F;idea&#x2F;    2、IDEA安装     3、IDEA激活 获取激活码：https:&#x2F;&#x2F;vrg123.com&#x2F; 密钥：5522   二、IDEA项目空间及模块1、IDEA项目结构IDEA 和 Eclipse 项目结构有些区别：  故IDEA项目结构如下：  2、IDEA创建项目及模块2.1 ID">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/chnpngwng/typora-image/raw/master/assets/IDEA/image-20230515184329084.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515184537402-1700559016458-1.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515184752248.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515184955314.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515190623613.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515190649234.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515190839230.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515191400035.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515193042107.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515193452866.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515193747826.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515194242342.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515194715679.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515195042645.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515195145655.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515195406124.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515195927703.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515194715679.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515201104650.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515201622518.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515205147730.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515202007399.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515202043199.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515202152512.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515211452183.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515211608411.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515212235015.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515212342817.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515212756115.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515212848900.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515212955362.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515213051985.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515224602880.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515224749680.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515213147391.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515213616168.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515214535952.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515214851841.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515215137792.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515215509189.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515215820419.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515220051196.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515220353619.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515220554432.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515220938891.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/i6j23x4oRL5fmht.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515221913890.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515225754552.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231042184.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231135323.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231816365.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231416679.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231511378.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231704312.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231755413.png">
+<meta property="article:published_time" content="2024-05-31T08:07:13.000Z">
+<meta property="article:modified_time" content="2024-05-31T08:11:04.366Z">
+<meta property="article:author" content="Chnpng Wng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/chnpngwng/typora-image/raw/master/assets/IDEA/image-20230515184329084.png">
+
+
+<link rel="canonical" href="http://example.com/2024/05/31/IDEA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-2023.1.1%E7%89%88%E6%9C%AC/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2024/05/31/IDEA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-2023.1.1%E7%89%88%E6%9C%AC/","path":"2024/05/31/IDEA使用教程-2023.1.1版本/","title":"IDEA使用教程"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>IDEA使用教程 | Hexo</title>
   
-  <style type="text/css">
-    pre,
-    code {
-      font-family: 'Fira Code', monospace;
-    }
-    html {
-      font-family: sans-serif;
-    }
-    body {
-      font-family: sans-serif;
-    }
-    h1, h2, h3, h4, h5, figure {
-      font-family: sans-serif;
-    }
-    .menu-container{
-      font-family: sans-serif;
-    }
-  </style>
 
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/js/jquery.jside.menu.min.js"></script>
-	<script>
-	$(document).ready(function(){
-	$(".menu-container").jSideMenu({
-	    jSidePosition: "position-right",
-	    jSideSticky: true,
-	    jSideSkin: "",
-	     });
-	}); 
-	</script>
-  
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
 
-<meta name="generator" content="Hexo 7.2.0"></head>
-<body>
-<div class="single">
 
-<div id="page">
-<div class="header">
-  <div id="lx-aside" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/post_cover.min.jpeg)" data-stellar-background-ratio="0.5">
-    <div class="overlay">
-      
-      <div class="page-title">
-        <div class="avatar"><a href="/"><img src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/avatar.min.jpeg" alt="Chnpng Wng"></a></div>
-        <span>2024-05-31</span>
-        <h2>IDEA使用教程</h2>
-        
-        
-      </div>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
     </div>
   </div>
 </div>
-<div id="lx-main-content">
-  <div class="lx-post">
-    <div class="lx-entry padding">
-      <div>
-        <h2 id="一、IDEA下载、安装"><a href="#一、IDEA下载、安装" class="headerlink" title="一、IDEA下载、安装"></a>一、IDEA下载、安装</h2><h3 id="1、IDEA下载"><a href="#1、IDEA下载" class="headerlink" title="1、IDEA下载"></a>1、IDEA下载</h3><blockquote>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">一、IDEA下载、安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">1、IDEA下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">2、IDEA安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">3、IDEA激活</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">二、IDEA项目空间及模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.1.</span> <span class="nav-text">1、IDEA项目结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.2.</span> <span class="nav-text">2、IDEA创建项目及模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.1 IDEA创建项目及配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">2.2.1 创建项目</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">2.2.2 项目配置</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link"><span class="nav-number">2.2.1.2.1.</span> <span class="nav-text">2.2.2.1 设置JDK</span></a></li><li class="nav-item nav-level-6"><a class="nav-link"><span class="nav-number">2.2.1.2.2.</span> <span class="nav-text">2.2.2.2 给项目绑定JDK</span></a></li><li class="nav-item nav-level-6"><a class="nav-link"><span class="nav-number">2.2.1.2.3.</span> <span class="nav-text">2.2.2.3 移除默认Module</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2 IDE创建模块</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">2.2.1 创建普通模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">2.2.2 创建Maven模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">2.2.3 创建Web模块</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link"><span class="nav-number">2.2.2.3.1.</span> <span class="nav-text">2.2.3.1 创建模块</span></a></li><li class="nav-item nav-level-6"><a class="nav-link"><span class="nav-number">2.2.2.3.2.</span> <span class="nav-text">2.2.3.2 配置Tomcat并挂载模块</span></a></li><li class="nav-item nav-level-6"><a class="nav-link"><span class="nav-number">2.2.2.3.3.</span> <span class="nav-text">2.2.3.3 启动项目</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.3 IDEA删除模块</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">2.3.1 从工作空间移除模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.2.3.2.</span> <span class="nav-text">2.3.2 彻底删除模块</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">三、IDEA常用设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.1.</span> <span class="nav-text">1、窗口菜单设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.2.</span> <span class="nav-text">2、主题设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.3.</span> <span class="nav-text">3、代码提示忽略大小写【重要】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.4.</span> <span class="nav-text">4、配置Maven【重要】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.5.</span> <span class="nav-text">5、设置项目编码格式【重要】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.6.</span> <span class="nav-text">6、自动导包及多余包优化【重要】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.7.</span> <span class="nav-text">7、设置字体、字号、字间距</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.8.</span> <span class="nav-text">8、 设置多个类不隐藏，多行显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.9.</span> <span class="nav-text">9、设置Maven依赖自动加载问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">四、IDEA快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.1.</span> <span class="nav-text">1、IDEA常用快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.1.1.</span> <span class="nav-text">1.1 快速复制代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.1.2.</span> <span class="nav-text">1.2 快速删除代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.1.3.</span> <span class="nav-text">1.3 快速生成类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.1.4.</span> <span class="nav-text">1.4 代码注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.1.5.</span> <span class="nav-text">1.5 代码自动生成</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.2.</span> <span class="nav-text">2、IDEA常用代码快速生成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.2.1.</span> <span class="nav-text">2.1 快速生成 main 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.2.2.</span> <span class="nav-text">2.2 快速生成输出语句</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">五、IDEA常用插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.1.</span> <span class="nav-text">1、彩虹括号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.2.</span> <span class="nav-text">2、AI代码自动提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.3.</span> <span class="nav-text">3、阿里巴巴Java编码规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.4.</span> <span class="nav-text">4、汉化包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.5.</span> <span class="nav-text">5、设置背景图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.6.</span> <span class="nav-text">6、文字输入炫酷效果</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chnpng Wng</p>
+  <div class="site-description" itemprop="description">学如逆水行舟，不进则退</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/31/IDEA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-2023.1.1%E7%89%88%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chnpng Wng">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="学如逆水行舟，不进则退">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="IDEA使用教程 | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          IDEA使用教程
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-05-31 16:07:13 / Modified: 16:11:04" itemprop="dateCreated datePublished" datetime="2024-05-31T16:07:13+08:00">2024-05-31</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2><span id="一-idea下载-安装">一、IDEA下载、安装</span></h2><h3><span id="1-idea下载">1、IDEA下载</span></h3><blockquote>
 <p>下载地址：<a target="_blank" rel="noopener" href="https://www.jetbrains.com/idea/">https://www.jetbrains.com/idea/</a></p>
 </blockquote>
 <p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/IDEA/image-20230515184329084.png" alt="image-20230515184329084"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515184537402-1700559016458-1.png" alt="image-20230515184537402"></p>
-<h3 id="2、IDEA安装"><a href="#2、IDEA安装" class="headerlink" title="2、IDEA安装"></a>2、IDEA安装</h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515184752248.png" alt="image-20230515184752248"></p>
+<h3><span id="2-idea安装">2、IDEA安装</span></h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515184752248.png" alt="image-20230515184752248"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515184955314.png" alt="image-20230515184955314"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515190623613.png" alt="image-20230515190623613"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515190649234.png" alt="image-20230515190649234"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515190839230.png" alt="image-20230515190839230"></p>
-<h3 id="3、IDEA激活"><a href="#3、IDEA激活" class="headerlink" title="3、IDEA激活"></a>3、IDEA激活</h3><blockquote>
+<h3><span id="3-idea激活">3、IDEA激活</span></h3><blockquote>
 <p>获取激活码：<a target="_blank" rel="noopener" href="https://vrg123.com/">https://vrg123.com/</a></p>
 <p>密钥：5522</p>
 </blockquote>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515191400035.png" alt="image-20230515191400035"></p>
-<h2 id="二、IDEA项目空间及模块"><a href="#二、IDEA项目空间及模块" class="headerlink" title="二、IDEA项目空间及模块"></a>二、IDEA项目空间及模块</h2><h3 id="1、IDEA项目结构"><a href="#1、IDEA项目结构" class="headerlink" title="1、IDEA项目结构"></a>1、IDEA项目结构</h3><p>IDEA 和 Eclipse 项目结构有些区别：</p>
+<h2><span id="二-idea项目空间及模块">二、IDEA项目空间及模块</span></h2><h3><span id="1-idea项目结构">1、IDEA项目结构</span></h3><p>IDEA 和 Eclipse 项目结构有些区别：</p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515193042107.png"></p>
 <p>故IDEA项目结构如下：</p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515193452866.png" alt="image-20230515193452866"></p>
-<h3 id="2、IDEA创建项目及模块"><a href="#2、IDEA创建项目及模块" class="headerlink" title="2、IDEA创建项目及模块"></a>2、IDEA创建项目及模块</h3><h4 id="2-1-IDEA创建项目及配置"><a href="#2-1-IDEA创建项目及配置" class="headerlink" title="2.1 IDEA创建项目及配置"></a>2.1 IDEA创建项目及配置</h4><h5 id="2-2-1-创建项目"><a href="#2-2-1-创建项目" class="headerlink" title="2.2.1 创建项目"></a>2.2.1 创建项目</h5><blockquote>
+<h3><span id="2-idea创建项目及模块">2、IDEA创建项目及模块</span></h3><h4><span id="21-idea创建项目及配置">2.1 IDEA创建项目及配置</span></h4><h5><span id="221-创建项目">2.2.1 创建项目</span></h5><blockquote>
 <p>如下案例：在D盘创建工作空间<code>idea-project</code></p>
 </blockquote>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515193747826.png" alt="image-20230515193747826"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515194242342.png" alt="image-20230515194242342"></p>
-<h5 id="2-2-2-项目配置"><a href="#2-2-2-项目配置" class="headerlink" title="2.2.2 项目配置"></a>2.2.2 项目配置</h5><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515194715679.png" alt="image-20230515194715679"></p>
-<h6 id="2-2-2-1-设置JDK"><a href="#2-2-2-1-设置JDK" class="headerlink" title="2.2.2.1 设置JDK"></a>2.2.2.1 设置JDK</h6><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515195042645.png" alt="image-20230515195042645"></p>
+<h5><span id="222-项目配置">2.2.2 项目配置</span></h5><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515194715679.png" alt="image-20230515194715679"></p>
+<h6><span id="2221-设置jdk">2.2.2.1 设置JDK</span></h6><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515195042645.png" alt="image-20230515195042645"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515195145655.png" alt="image-20230515195145655"></p>
-<h6 id="2-2-2-2-给项目绑定JDK"><a href="#2-2-2-2-给项目绑定JDK" class="headerlink" title="2.2.2.2 给项目绑定JDK"></a>2.2.2.2 给项目绑定JDK</h6><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515195406124.png" alt="image-20230515195406124"></p>
-<h6 id="2-2-2-3-移除默认Module"><a href="#2-2-2-3-移除默认Module" class="headerlink" title="2.2.2.3 移除默认Module"></a>2.2.2.3 移除默认Module</h6><blockquote>
+<h6><span id="2222-给项目绑定jdk">2.2.2.2 给项目绑定JDK</span></h6><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515195406124.png" alt="image-20230515195406124"></p>
+<h6><span id="2223-移除默认module">2.2.2.3 移除默认Module</span></h6><blockquote>
 <p>IDEA创建Project后会默认将其作为一个Module，但IDEA中Project一般就只是用来存储Module，不进行代码开发，故建议将默认生成的Module移除，避免项目结构混乱。</p>
 </blockquote>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515195927703.png" alt="image-20230515195927703"></p>
-<h4 id="2-2-IDE创建模块"><a href="#2-2-IDE创建模块" class="headerlink" title="2.2 IDE创建模块"></a>2.2 IDE创建模块</h4><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515194715679.png" alt="image-20230515194715679"></p>
+<h4><span id="22-ide创建模块">2.2 IDE创建模块</span></h4><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515194715679.png" alt="image-20230515194715679"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515201104650.png" alt="image-20230515201104650"></p>
-<h5 id="2-2-1-创建普通模块"><a href="#2-2-1-创建普通模块" class="headerlink" title="2.2.1 创建普通模块"></a>2.2.1 创建普通模块</h5><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515201622518.png" alt="image-20230515201622518"></p>
+<h5><span id="221-创建普通模块">2.2.1 创建普通模块</span></h5><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515201622518.png" alt="image-20230515201622518"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515205147730.png" alt="image-20230515205147730"></p>
-<h5 id="2-2-2-创建Maven模块"><a href="#2-2-2-创建Maven模块" class="headerlink" title="2.2.2 创建Maven模块"></a>2.2.2 创建Maven模块</h5><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515202007399.png" alt="image-20230515202007399"></p>
+<h5><span id="222-创建maven模块">2.2.2 创建Maven模块</span></h5><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515202007399.png" alt="image-20230515202007399"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515202043199.png" alt="image-20230515202043199"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515202152512.png" alt="image-20230515202152512"></p>
-<h5 id="2-2-3-创建Web模块"><a href="#2-2-3-创建Web模块" class="headerlink" title="2.2.3 创建Web模块"></a>2.2.3 创建Web模块</h5><blockquote>
+<h5><span id="223-创建web模块">2.2.3 创建Web模块</span></h5><blockquote>
 <p>在IDEA中，可以在普通模块或者Maven模块的基础上添加框架支持</p>
 </blockquote>
-<h6 id="2-2-3-1-创建模块"><a href="#2-2-3-1-创建模块" class="headerlink" title="2.2.3.1 创建模块"></a>2.2.3.1 创建模块</h6><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515211452183.png" alt="image-20230515211452183"></p>
+<h6><span id="2231-创建模块">2.2.3.1 创建模块</span></h6><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515211452183.png" alt="image-20230515211452183"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515211608411.png" alt="image-20230515211608411"></p>
-<h6 id="2-2-3-2-配置Tomcat并挂载模块"><a href="#2-2-3-2-配置Tomcat并挂载模块" class="headerlink" title="2.2.3.2 配置Tomcat并挂载模块"></a>2.2.3.2 配置Tomcat并挂载模块</h6><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515212235015.png" alt="image-20230515212235015"></p>
+<h6><span id="2232-配置tomcat并挂载模块">2.2.3.2 配置Tomcat并挂载模块</span></h6><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515212235015.png" alt="image-20230515212235015"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515212342817.png" alt="image-20230515212342817"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515212756115.png" alt="image-20230515212756115"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515212848900.png" alt="image-20230515212848900"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515212955362.png" alt="image-20230515212955362"></p>
-<h6 id="2-2-3-3-启动项目"><a href="#2-2-3-3-启动项目" class="headerlink" title="2.2.3.3 启动项目"></a>2.2.3.3 启动项目</h6><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515213051985.png" alt="image-20230515213051985"></p>
-<h4 id="2-3-IDEA删除模块"><a href="#2-3-IDEA删除模块" class="headerlink" title="2.3 IDEA删除模块"></a>2.3 IDEA删除模块</h4><h5 id="2-3-1-从工作空间移除模块"><a href="#2-3-1-从工作空间移除模块" class="headerlink" title="2.3.1 从工作空间移除模块"></a>2.3.1 从工作空间移除模块</h5><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515224602880.png" alt="image-20230515224602880"></p>
-<h5 id="2-3-2-彻底删除模块"><a href="#2-3-2-彻底删除模块" class="headerlink" title="2.3.2 彻底删除模块"></a>2.3.2 彻底删除模块</h5><blockquote>
+<h6><span id="2233-启动项目">2.2.3.3 启动项目</span></h6><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515213051985.png" alt="image-20230515213051985"></p>
+<h4><span id="23-idea删除模块">2.3 IDEA删除模块</span></h4><h5><span id="231-从工作空间移除模块">2.3.1 从工作空间移除模块</span></h5><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515224602880.png" alt="image-20230515224602880"></p>
+<h5><span id="232-彻底删除模块">2.3.2 彻底删除模块</span></h5><blockquote>
 <p>IDEA中如果需要彻底删除模块，需要进入工作空间，找到模块，手动删除</p>
 <ul>
 <li>注意：除模块之外，工作空间的其他文件及文件夹均不能删除</li>
 </ul>
 </blockquote>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515224749680.png" alt="image-20230515224749680"></p>
-<h2 id="三、IDEA常用设置"><a href="#三、IDEA常用设置" class="headerlink" title="三、IDEA常用设置"></a>三、IDEA常用设置</h2><blockquote>
+<h2><span id="三-idea常用设置">三、IDEA常用设置</span></h2><blockquote>
 <p>IDEA设置菜单位置：</p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515213147391.png" alt="image-20230515213147391"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515213616168.png" alt="image-20230515213616168"></p>
 </blockquote>
-<h3 id="1、窗口菜单设置"><a href="#1、窗口菜单设置" class="headerlink" title="1、窗口菜单设置"></a>1、窗口菜单设置</h3><blockquote>
+<h3><span id="1-窗口菜单设置">1、窗口菜单设置</span></h3><blockquote>
 <p>主要设置各菜单模块的显示与隐藏，此设置一般使用默认</p>
 </blockquote>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515214535952.png" alt="image-20230515214535952"></p>
@@ -158,157 +315,125 @@
 <p>连按两下shift键，跳出搜索框，在搜索框中输入<code>menu</code>，打开主菜单即可</p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515214851841.png" alt="image-20230515214851841"></p>
 </blockquote>
-<h3 id="2、主题设置"><a href="#2、主题设置" class="headerlink" title="2、主题设置"></a>2、主题设置</h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515215137792.png" alt="image-20230515215137792"></p>
-<h3 id="3、代码提示忽略大小写【重要】"><a href="#3、代码提示忽略大小写【重要】" class="headerlink" title="3、代码提示忽略大小写【重要】"></a>3、代码提示忽略大小写【重要】</h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515215509189.png" alt="image-20230515215509189"></p>
-<h3 id="4、配置Maven【重要】"><a href="#4、配置Maven【重要】" class="headerlink" title="4、配置Maven【重要】"></a>4、配置Maven【重要】</h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515215820419.png" alt="image-20230515215820419"></p>
-<h3 id="5、设置项目编码格式【重要】"><a href="#5、设置项目编码格式【重要】" class="headerlink" title="5、设置项目编码格式【重要】"></a>5、设置项目编码格式【重要】</h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515220051196.png" alt="image-20230515220051196"></p>
-<h3 id="6、自动导包及多余包优化【重要】"><a href="#6、自动导包及多余包优化【重要】" class="headerlink" title="6、自动导包及多余包优化【重要】"></a>6、自动导包及多余包优化【重要】</h3><blockquote>
+<h3><span id="2-主题设置">2、主题设置</span></h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515215137792.png" alt="image-20230515215137792"></p>
+<h3><span id="3-代码提示忽略大小写重要">3、代码提示忽略大小写【重要】</span></h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515215509189.png" alt="image-20230515215509189"></p>
+<h3><span id="4-配置maven重要">4、配置Maven【重要】</span></h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515215820419.png" alt="image-20230515215820419"></p>
+<h3><span id="5-设置项目编码格式重要">5、设置项目编码格式【重要】</span></h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515220051196.png" alt="image-20230515220051196"></p>
+<h3><span id="6-自动导包及多余包优化重要">6、自动导包及多余包优化【重要】</span></h3><blockquote>
 <p>手动导包快捷键：Alt + Enter</p>
 </blockquote>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515220353619.png" alt="image-20230515220353619"></p>
-<h3 id="7、设置字体、字号、字间距"><a href="#7、设置字体、字号、字间距" class="headerlink" title="7、设置字体、字号、字间距"></a>7、设置字体、字号、字间距</h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515220554432.png" alt="image-20230515220554432"></p>
-<h3 id="8、-设置多个类不隐藏，多行显示"><a href="#8、-设置多个类不隐藏，多行显示" class="headerlink" title="8、 设置多个类不隐藏，多行显示"></a>8、 设置多个类不隐藏，多行显示</h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515220938891.png" alt="image-20230515220938891"></p>
+<h3><span id="7-设置字体-字号-字间距">7、设置字体、字号、字间距</span></h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515220554432.png" alt="image-20230515220554432"></p>
+<h3><span id="8-设置多个类不隐藏多行显示">8、 设置多个类不隐藏，多行显示</span></h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515220938891.png" alt="image-20230515220938891"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/i6j23x4oRL5fmht.png" alt="image-20211211001213923"></p>
-<h3 id="9、设置Maven依赖自动加载问题"><a href="#9、设置Maven依赖自动加载问题" class="headerlink" title="9、设置Maven依赖自动加载问题"></a>9、设置Maven依赖自动加载问题</h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515221913890.png" alt="image-20230515221913890"></p>
-<h2 id="四、IDEA快捷键"><a href="#四、IDEA快捷键" class="headerlink" title="四、IDEA快捷键"></a>四、IDEA快捷键</h2><blockquote>
+<h3><span id="9-设置maven依赖自动加载问题">9、设置Maven依赖自动加载问题</span></h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515221913890.png" alt="image-20230515221913890"></p>
+<h2><span id="四-idea快捷键">四、IDEA快捷键</span></h2><blockquote>
 <p>IDEA有自己的一套快捷键，和Eclipse有一定的区别，如果想使用Eclipse的快捷键习惯，可以做如下配置：</p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515225754552.png" alt="image-20230515225754552"></p>
 </blockquote>
-<h3 id="1、IDEA常用快捷键"><a href="#1、IDEA常用快捷键" class="headerlink" title="1、IDEA常用快捷键"></a>1、IDEA常用快捷键</h3><h4 id="1-1-快速复制代码"><a href="#1-1-快速复制代码" class="headerlink" title="1.1 快速复制代码"></a>1.1 快速复制代码</h4><p><code>Ctrl + D</code></p>
-<h4 id="1-2-快速删除代码"><a href="#1-2-快速删除代码" class="headerlink" title="1.2 快速删除代码"></a>1.2 快速删除代码</h4><p><code>Ctrl + X</code> 或者 <code>Ctrl + Y</code></p>
-<h4 id="1-3-快速生成类型"><a href="#1-3-快速生成类型" class="headerlink" title="1.3 快速生成类型"></a>1.3 快速生成类型</h4><p><code>Ctrl + Alt + V</code></p>
-<h4 id="1-4-代码注释"><a href="#1-4-代码注释" class="headerlink" title="1.4 代码注释"></a>1.4 代码注释</h4><ul>
+<h3><span id="1-idea常用快捷键">1、IDEA常用快捷键</span></h3><h4><span id="11-快速复制代码">1.1 快速复制代码</span></h4><p><code>Ctrl + D</code></p>
+<h4><span id="12-快速删除代码">1.2 快速删除代码</span></h4><p><code>Ctrl + X</code> 或者 <code>Ctrl + Y</code></p>
+<h4><span id="13-快速生成类型">1.3 快速生成类型</span></h4><p><code>Ctrl + Alt + V</code></p>
+<h4><span id="14-代码注释">1.4 代码注释</span></h4><ul>
 <li><p>单行注释：<code>Ctrl + /</code></p>
 </li>
 <li><p>多行注释：<code>Ctrl + Shift + /</code></p>
 </li>
 </ul>
-<h4 id="1-5-代码自动生成"><a href="#1-5-代码自动生成" class="headerlink" title="1.5 代码自动生成"></a>1.5 代码自动生成</h4><p><code>Alt + Insert</code></p>
-<h3 id="2、IDEA常用代码快速生成"><a href="#2、IDEA常用代码快速生成" class="headerlink" title="2、IDEA常用代码快速生成"></a>2、IDEA常用代码快速生成</h3><h4 id="2-1-快速生成-main-方法"><a href="#2-1-快速生成-main-方法" class="headerlink" title="2.1 快速生成 main 方法"></a>2.1 快速生成 main 方法</h4><p><code>main</code></p>
-<h4 id="2-2-快速生成输出语句"><a href="#2-2-快速生成输出语句" class="headerlink" title="2.2 快速生成输出语句"></a>2.2 快速生成输出语句</h4><p><code>sout</code></p>
-<h2 id="五、IDEA常用插件"><a href="#五、IDEA常用插件" class="headerlink" title="五、IDEA常用插件"></a>五、IDEA常用插件</h2><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231042184.png" alt="image-20230515231042184"></p>
-<h3 id="1、彩虹括号"><a href="#1、彩虹括号" class="headerlink" title="1、彩虹括号"></a>1、彩虹括号</h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231135323.png" alt="image-20230515231135323"></p>
-<h3 id="2、AI代码自动提示"><a href="#2、AI代码自动提示" class="headerlink" title="2、AI代码自动提示"></a>2、AI代码自动提示</h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231816365.png" alt="image-20230515231816365"></p>
-<h3 id="3、阿里巴巴Java编码规范"><a href="#3、阿里巴巴Java编码规范" class="headerlink" title="3、阿里巴巴Java编码规范"></a>3、阿里巴巴Java编码规范</h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231416679.png" alt="image-20230515231416679"></p>
-<h3 id="4、汉化包"><a href="#4、汉化包" class="headerlink" title="4、汉化包"></a>4、汉化包</h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231511378.png" alt="image-20230515231511378"></p>
-<h3 id="5、设置背景图片"><a href="#5、设置背景图片" class="headerlink" title="5、设置背景图片"></a>5、设置背景图片</h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231704312.png" alt="image-20230515231704312"></p>
-<h3 id="6、文字输入炫酷效果"><a href="#6、文字输入炫酷效果" class="headerlink" title="6、文字输入炫酷效果"></a>6、文字输入炫酷效果</h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231755413.png" alt="image-20230515231755413"></p>
+<h4><span id="15-代码自动生成">1.5 代码自动生成</span></h4><p><code>Alt + Insert</code></p>
+<h3><span id="2-idea常用代码快速生成">2、IDEA常用代码快速生成</span></h3><h4><span id="21-快速生成-main-方法">2.1 快速生成 main 方法</span></h4><p><code>main</code></p>
+<h4><span id="22-快速生成输出语句">2.2 快速生成输出语句</span></h4><p><code>sout</code></p>
+<h2><span id="五-idea常用插件">五、IDEA常用插件</span></h2><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231042184.png" alt="image-20230515231042184"></p>
+<h3><span id="1-彩虹括号">1、彩虹括号</span></h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231135323.png" alt="image-20230515231135323"></p>
+<h3><span id="2-ai代码自动提示">2、AI代码自动提示</span></h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231816365.png" alt="image-20230515231816365"></p>
+<h3><span id="3-阿里巴巴java编码规范">3、阿里巴巴Java编码规范</span></h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231416679.png" alt="image-20230515231416679"></p>
+<h3><span id="4-汉化包">4、汉化包</span></h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231511378.png" alt="image-20230515231511378"></p>
+<h3><span id="5-设置背景图片">5、设置背景图片</span></h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231704312.png" alt="image-20230515231704312"></p>
+<h3><span id="6-文字输入炫酷效果">6、文字输入炫酷效果</span></h3><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/IDEA/image-20230515231755413.png" alt="image-20230515231755413"></p>
 
-      </div>
     </div>
-  </div>
-</div>
-<div class="lx-navigation">
-	<div class="lx-cover next lx-cover-sm" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/footer-l.min.jpeg)">
-		<div class="overlay"></div>
-		<a class="copy" href="#">
-			<div class="display-t">
-				<div class="display-tc">
-					<div>
-						<span>Next</span>
-						<h3>No newer post</h3>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div>
-        <div class="lx-cover prev lx-cover-sm" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/footer-r.min.jpeg)">
-		<div class="overlay"></div>
-		<a class="copy" href="/2024/05/31/Kafka%E6%90%AD%E5%BB%BA/">
-			<div class="display-t">
-				<div class="display-tc">
-					<div>
-						<span>Prev</span>
-						<h3>Kafka</h3>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div>
-</div>
 
-</div>
-
-<footer>
-  <div>
-  Copyright &copy; 2024.<a href="/">Hexo</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
-  </div>
-</footer>
-
-</div>
-
-<button class="hamburger hamburger--arrow-r" type="button" title="menu">
-    <div class="hamburger-box">
-      <div class="hamburger-inner"></div>
-    </div>
-</button>
-<div class="menu visibility">
-  <div class="menu-head">
-    <span class="layer">
-      <div class="col">
-        <div class="row for-pic">
-          <div class="profile-pic">
-            <a href="/"><img src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/avatar.min.jpeg" alt="Chnpng Wng"/></a>
-          </div>
-        </div>
-        <div class="row for-name">
-          <p>Chnpng Wng</p>
-          <span class="tagline">Hello, World!</span>
-        </div>
-      </div>
-    </span>
-  </div>
-  <nav class="menu-container">
-  <ul class="menu-items">
-    <li><a href="/"><i class="fa fa-home fa-fw"></i>Home</a></li>
-    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
     
-    <li class="has-sub"><span class="dropdown-heading">
-      <i class="fa fa-bookmark fa-fw"></i>Pages</span>
-        <ul>
-          <li><a href="/guestbook/">Guestbook</a></li>
-        <li><a href="/about/">About</a></li>
-        </ul>
-    </li>
-    <li class="has-sub"><span class="dropdown-heading">
-      <i class="fa fa-link fa-fw"></i>Friends</span>
-        <ul>
-          <li> <a href="https://lx.js.org" target="_blank">Theme-Lx</a></li>
-        </ul>
-    </li>
-  </ul>
-  </nav>
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/05/31/centos7%E5%AE%89%E8%A3%85MySQL8.0.33%E6%AD%A5%E9%AA%A4/" rel="prev" title="centos7安装MySQL">
+                  <i class="fa fa-angle-left"></i> centos7安装MySQL
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/05/31/Kafka%E6%90%AD%E5%BB%BA/" rel="next" title="Kafka">
+                  Kafka <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
 </div>
 
-<div class="gototop js-top">
-  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+
+
+
+
+
 </div>
-<script src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/js/jquery.easing.min.js"></script>
-<script>
-(function () {
-	"use strict";
-	var goToTop = function() {
-		$(".js-gotop").on("click", function(event){
-			event.preventDefault();
-			$("html, body").animate({
-				scrollTop: $("html").offset().top
-			}, 500, "easeInOutExpo");
-			return false;
-		});
-		$(window).scroll(function(){
-			var $win = $(window);
-			if ($win.scrollTop() > 200) {
-				$(".js-top").addClass("active");
-			} else {
-				$(".js-top").removeClass("active");
-			}
-		});
-	};
-	$(function(){
-		goToTop();
-	});
-}());
-</script>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Chnpng Wng</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
 
 
 </body>

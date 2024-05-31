@@ -1,97 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="theme-color" content=#58b77a>
-  <title>jdk安装及环境配置 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="Chnpng Wng">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
-  <meta name="referrer" content="no-referrer">
-  <script id="hexo-configurations">
-  var CONFIG = {
-    root: '/',
-    theme: 'hexo-theme-lx',
-    version: '0.4.4',
-    localsearch:{
-      "enable": false,
-      "trigger": "auto",
-      "top_n_per_article": 1,
-      "unescape": false,
-      "preload": false
-      },
-    path: 'null'
-  };
-</script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
 
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/css/main.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="一、jdk下载     二、jdk安装1、找到jdk安装包        2、安装jdk             3、安装jre                三、环境变量配置    新建一个jdk安装的bin目录：  三、测试JDK是否安装成功   java -version">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jdk安装及环境配置">
+<meta property="og:url" content="http://example.com/2024/05/31/jdk%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、jdk下载     二、jdk安装1、找到jdk安装包        2、安装jdk             3、安装jre                三、环境变量配置    新建一个jdk安装的bin目录：  三、测试JDK是否安装成功   java -version">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/001.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/002.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/003.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/004.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/005.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/006.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/007.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/008.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/009.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/010.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/011.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/012.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/013.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/014.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/015.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/016.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/017.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/018.png">
+<meta property="og:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/019.png">
+<meta property="article:published_time" content="2024-05-31T08:07:13.000Z">
+<meta property="article:modified_time" content="2024-05-31T08:10:46.421Z">
+<meta property="article:author" content="Chnpng Wng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/001.png">
+
+
+<link rel="canonical" href="http://example.com/2024/05/31/jdk%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2024/05/31/jdk%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/","path":"2024/05/31/jdk安装及配置/","title":"jdk安装及环境配置"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>jdk安装及环境配置 | Hexo</title>
   
-  <style type="text/css">
-    pre,
-    code {
-      font-family: 'Fira Code', monospace;
-    }
-    html {
-      font-family: sans-serif;
-    }
-    body {
-      font-family: sans-serif;
-    }
-    h1, h2, h3, h4, h5, figure {
-      font-family: sans-serif;
-    }
-    .menu-container{
-      font-family: sans-serif;
-    }
-  </style>
 
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/js/jquery.jside.menu.min.js"></script>
-	<script>
-	$(document).ready(function(){
-	$(".menu-container").jSideMenu({
-	    jSidePosition: "position-right",
-	    jSideSticky: true,
-	    jSideSkin: "",
-	     });
-	}); 
-	</script>
-  
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
 
-<meta name="generator" content="Hexo 7.2.0"></head>
-<body>
-<div class="single">
 
-<div id="page">
-<div class="header">
-  <div id="lx-aside" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/post_cover.min.jpeg)" data-stellar-background-ratio="0.5">
-    <div class="overlay">
-      
-      <div class="page-title">
-        <div class="avatar"><a href="/"><img src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/avatar.min.jpeg" alt="Chnpng Wng"></a></div>
-        <span>2024-05-31</span>
-        <h2>jdk安装及环境配置</h2>
-        
-        
-      </div>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
     </div>
   </div>
 </div>
-<div id="lx-main-content">
-  <div class="lx-post">
-    <div class="lx-entry padding">
-      <div>
-        <h2 id="一、jdk下载"><a href="#一、jdk下载" class="headerlink" title="一、jdk下载"></a><strong>一、jdk下载</strong></h2><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/001.png" alt="clipboard.png"></p>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">一、jdk下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">二、jdk安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">三、环境变量配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">三、测试JDK是否安装成功</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chnpng Wng</p>
+  <div class="site-description" itemprop="description">学如逆水行舟，不进则退</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/31/jdk%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chnpng Wng">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="学如逆水行舟，不进则退">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="jdk安装及环境配置 | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          jdk安装及环境配置
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-05-31 16:07:13 / Modified: 16:10:46" itemprop="dateCreated datePublished" datetime="2024-05-31T16:07:13+08:00">2024-05-31</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2><span id="一-jdk下载"><strong>一、jdk下载</strong></span></h2><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/001.png" alt="clipboard.png"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/002.png" alt="clipboard.png"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/003.png" alt="clipboard.png"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/004.png" alt="clipboard.png"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/005.png" alt="clipboard.png"></p>
-<h2 id="二、jdk安装"><a href="#二、jdk安装" class="headerlink" title="二、jdk安装"></a><strong>二、jdk安装</strong></h2><p><strong>1、找到jdk安装包</strong></p>
+<h2><span id="二-jdk安装"><strong>二、jdk安装</strong></span></h2><p><strong>1、找到jdk安装包</strong></p>
 <table>
 <thead>
 <tr>
@@ -128,13 +249,13 @@
 <td align="left"><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/013.png" alt="image8.png"></td>
 </tr>
 </tbody></table>
-<h2 id="三、环境变量配置"><a href="#三、环境变量配置" class="headerlink" title="三、环境变量配置"></a><strong>三、环境变量配置</strong></h2><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/014.png" alt="clipboard.png"></p>
+<h2><span id="三-环境变量配置"><strong>三、环境变量配置</strong></span></h2><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/014.png" alt="clipboard.png"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/015.png" alt="clipboard.png"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/016.png" alt="clipboard.png"></p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/017.png" alt="clipboard.png"></p>
 <p>新建一个jdk安装的bin目录：</p>
 <p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/018.png" alt="clipboard.png"></p>
-<h2 id="三、测试JDK是否安装成功"><a href="#三、测试JDK是否安装成功" class="headerlink" title="三、测试JDK是否安装成功"></a><strong>三、测试JDK是否安装成功</strong></h2><table>
+<h2><span id="三-测试jdk是否安装成功"><strong>三、测试JDK是否安装成功</strong></span></h2><table>
 <thead>
 <tr>
 <th align="left">java -version</th>
@@ -145,121 +266,89 @@
 </tr>
 </tbody></table>
 
-      </div>
     </div>
-  </div>
-</div>
-<div class="lx-navigation">
-	<div class="lx-cover next lx-cover-sm" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/footer-l.min.jpeg)">
-		<div class="overlay"></div>
-		<a class="copy" href="/2024/05/31/eclipse%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/">
-			<div class="display-t">
-				<div class="display-tc">
-					<div>
-						<span>Next</span>
-						<h3>eclipse...</h3>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div>
-        <div class="lx-cover prev lx-cover-sm" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/footer-r.min.jpeg)">
-		<div class="overlay"></div>
-		<a class="copy" href="/2024/05/31/centos7%E5%AE%89%E8%A3%85MySQL8.0.33%E6%AD%A5%E9%AA%A4/">
-			<div class="display-t">
-				<div class="display-tc">
-					<div>
-						<span>Prev</span>
-						<h3>centos7...</h3>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div>
-</div>
 
-</div>
-
-<footer>
-  <div>
-  Copyright &copy; 2024.<a href="/">Hexo</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
-  </div>
-</footer>
-
-</div>
-
-<button class="hamburger hamburger--arrow-r" type="button" title="menu">
-    <div class="hamburger-box">
-      <div class="hamburger-inner"></div>
-    </div>
-</button>
-<div class="menu visibility">
-  <div class="menu-head">
-    <span class="layer">
-      <div class="col">
-        <div class="row for-pic">
-          <div class="profile-pic">
-            <a href="/"><img src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/avatar.min.jpeg" alt="Chnpng Wng"/></a>
-          </div>
-        </div>
-        <div class="row for-name">
-          <p>Chnpng Wng</p>
-          <span class="tagline">Hello, World!</span>
-        </div>
-      </div>
-    </span>
-  </div>
-  <nav class="menu-container">
-  <ul class="menu-items">
-    <li><a href="/"><i class="fa fa-home fa-fw"></i>Home</a></li>
-    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
     
-    <li class="has-sub"><span class="dropdown-heading">
-      <i class="fa fa-bookmark fa-fw"></i>Pages</span>
-        <ul>
-          <li><a href="/guestbook/">Guestbook</a></li>
-        <li><a href="/about/">About</a></li>
-        </ul>
-    </li>
-    <li class="has-sub"><span class="dropdown-heading">
-      <i class="fa fa-link fa-fw"></i>Friends</span>
-        <ul>
-          <li> <a href="https://lx.js.org" target="_blank">Theme-Lx</a></li>
-        </ul>
-    </li>
-  </ul>
-  </nav>
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/05/31/flume%E6%90%AD%E5%BB%BA/" rel="prev" title="flume">
+                  <i class="fa fa-angle-left"></i> flume
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/05/31/MySQL%E5%9F%BA%E7%A1%80/" rel="next" title="MySQL">
+                  MySQL <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
 </div>
 
-<div class="gototop js-top">
-  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+
+
+
+
+
 </div>
-<script src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/js/jquery.easing.min.js"></script>
-<script>
-(function () {
-	"use strict";
-	var goToTop = function() {
-		$(".js-gotop").on("click", function(event){
-			event.preventDefault();
-			$("html, body").animate({
-				scrollTop: $("html").offset().top
-			}, 500, "easeInOutExpo");
-			return false;
-		});
-		$(window).scroll(function(){
-			var $win = $(window);
-			if ($win.scrollTop() > 200) {
-				$(".js-top").addClass("active");
-			} else {
-				$(".js-top").removeClass("active");
-			}
-		});
-	};
-	$(function(){
-		goToTop();
-	});
-}());
-</script>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Chnpng Wng</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
 
 
 </body>
