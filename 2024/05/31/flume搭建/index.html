@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content=#58b77a>
+  <title>flume | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Chnpng Wng">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="referrer" content="no-referrer">
+  <script id="hexo-configurations">
+  var CONFIG = {
+    root: '/',
+    theme: 'hexo-theme-lx',
+    version: '0.4.4',
+    localsearch:{
+      "enable": false,
+      "trigger": "auto",
+      "top_n_per_article": 1,
+      "unescape": false,
+      "preload": false
+      },
+    path: 'null'
+  };
+</script>
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/css/main.min.css">
+  
+  <style type="text/css">
+    pre,
+    code {
+      font-family: 'Fira Code', monospace;
+    }
+    html {
+      font-family: sans-serif;
+    }
+    body {
+      font-family: sans-serif;
+    }
+    h1, h2, h3, h4, h5, figure {
+      font-family: sans-serif;
+    }
+    .menu-container{
+      font-family: sans-serif;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/js/jquery.jside.menu.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "",
+	     });
+	}); 
+	</script>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+<body>
+<div class="single">
+
+<div id="page">
+<div class="header">
+  <div id="lx-aside" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/post_cover.min.jpeg)" data-stellar-background-ratio="0.5">
+    <div class="overlay">
+      
+      <div class="page-title">
+        <div class="avatar"><a href="/"><img src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/avatar.min.jpeg" alt="Chnpng Wng"></a></div>
+        <span>2024-05-31</span>
+        <h2>flume</h2>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div id="lx-main-content">
+  <div class="lx-post">
+    <div class="lx-entry padding">
+      <div>
+        <p>1.上传压缩包到&#x2F;opt</p>
+<p>解压压缩包</p>
+<p>tar -xzvf apache-flume-1.9.0-bin.tar.gz -C &#x2F;opt</p>
+<p>重命名</p>
+<p>mv apache-flume-1.9.0-bin.tar.gz flume</p>
+<p>2.配置环境变量</p>
+<p>vim &#x2F;etc&#x2F;profile.d&#x2F;hadoop-eco.sh</p>
+<p>FLUME_HOME&#x3D;&#x2F;opt&#x2F;flume PATH&#x3D;$PATH:$FLUME_HOME&#x2F;bin</p>
+<p>3.拷贝flume-env.sh.template 重命名为 flume-env.sh</p>
+<p>4.编辑flume-env.sh</p>
+<p>取消注释，编辑</p>
+<p>export JAVA_HOME&#x3D;&#x2F;opt&#x2F;jdk</p>
+<p>5.替换flume的lib目录的低版本java.jar包<br><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/flume/flume1.png" style="width:4.16236in;height:1.19667in"><br>rm -rf guava-11.0.2.jar</p>
+<p>cp &#x2F;opt&#x2F;hadoop&#x2F;share&#x2F;hadoop&#x2F;common&#x2F;lib&#x2F;guava-27.0-jre.jar<br>&#x2F;opt&#x2F;flume&#x2F;lib</p>
+<p>二、监听网络端口发送信息(在slave01上借助44444发送内容给master，master的flume<br>负责接收内容收集显示到控制台)<br>1.在slave01的控制台上输入内容，通过网络端口44444发送给master(安装flume的机器)<br>接收，flume则负责监听端口将内容（模拟日志）进行收集显示到控制台，新建fllume配置文件</p>
+<p>方式一：以日志的形式存储数据</p>
+<p>Vim conf&#x2F;console.conf</p>
+<p>定义当前 agent(数据收集器) 的名字为 a1，可以随意</p>
+<p>定义 agent 中的 sources(数据来源) 名字为 r1 a1.sources &#x3D; r1</p>
+<p>定义 agent 中的 sinks(数据存储) 组件叫做 k1 a1.sink&#x3D;k1</p>
+<p>定义 agent 中的 channels(数据缓存) 组件叫 c1 a1.channels&#x3D;c1</p>
+<p>分别详细设置 #source类型为网络字节流(数据来源的类型为字节流)<br>a1.sources.r1.type&#x3D;netcat</p>
+<p>netcat代表网络端口</p>
+<p>监听的主机名 a1.sources.r1.bind&#x3D;master</p>
+<p>监听接收数据的端口号 a1.sources.r1.port&#x3D;44444</p>
+<p>设置类型为 logger 日志方式（发送的内容的存储方式为日志）<br>a1.sinks.k1.type&#x3D;logger</p>
+<p>内存进行数据缓存 a1.channels.c1.type&#x3D;memory</p>
+<p>定义容量 a1.channels.c1.capacity&#x3D;1000</p>
+<p>最大事务容量 a1.channels.c1.transactionCapacity&#x3D;100</p>
+<p>建立关联</p>
+<p>a1.sources.r1.channels&#x3D;c1 a1.sinks.k1.channel&#x3D;c1</p>
+<p>2.在master上启动flume监听：(在bin下面启动)</p>
+<p>.&#x2F;flume-ng agent -c conf -f ..&#x2F;conf&#x2F;console.conf -name a1 -Dflume.root.logger&#x3D;INFO,console</p>
+<p>Dflume.root.logger&#x3D;INFO.console 输出级别为INFO，输出到控制台</p>
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/flume/flume2.png" style="width:5.00069in;height:2.45069in"></p>
+<p>已经成功，强制退出即可</p>
+<p>3.在slave01上进行网络信息发送</p>
+<p>nc master 44444</p>
+<p>然后回车，就可以输入要发送的内容</p>
+<img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/flume/flume3.png" style="width:5.00069in;height:1.52in">
+
+<p>输入要发送的内容</p>
+<img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/flume/flume4.png" style="width:5.00069in;height:1.18in">
+
+<p> 在master的控制台中可以看到接收的内容</p>
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/flume/flume5.png"> style&#x3D;”width:5.00069in;height:1.43194in” &#x2F;&gt;<br>完成之后强制退出即可<br>方式二：以文件的形式存储<br> 检测网络端口是否被占用<br>netstat -ano | findstr :[端口号]<br>需要改一下端口号，防止被占用，改一下44444<br>在opt下面创建temp用于接收发送的内容<br>设置类型为 logger 日志方式（发送的内容的存储方式为文件）</p>
+<p>a1.sinks.k1.type&#x3D;file_roll a1.sinks.k1.sink.directory&#x3D;&#x2F;opt&#x2F;temp<br>a1.sinks.k1.sink.rollinterval&#x3D;0</p>
+<p>在master上启动flume监听：(在bin下面启动)</p>
+<p>.&#x2F;flume-ng agent -c conf -f ..&#x2F;conf&#x2F;console.conf -name a1 -Dflume.root.logger&#x3D;INFO,console</p>
+<p>在slave01上进行网络信息发送 nc slave01 44445</p>
+<p>回车之后输入发送的内容<br>发现内容没有打印到控制台</p>
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/flume/flume6.png"> style&#x3D;”width:5.00069in;height:1.63694in” &#x2F;&gt;<br>输入的内容被保存在文件中了</p>
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/flume/flume7.png"> style&#x3D;”width:5.00069in;height:1.26167in” &#x2F;&gt;</p>
+<p>三、定义监听文件变化收集<br>1.监听master机器上某个文件的变化，将变化的内容打印到控制台，新建flume配置文件<br>如下：<br>vim conf&#x2F;ckfile.conf<br>Vim conf&#x2F;flumetest.txt aaaa<br>定义当前 agent(数据收集器) 的名字为 a2，可以随意<br>定义 agent 中的 sources(数据来源) 名字为 r1 a2.sources &#x3D; r1<br>定义 agent 中的 sinks(数据存储) 组件叫做 k1 a2.sink&#x3D;k1<br>定义 agent 中的 channels(数据缓存) 组件叫 c1 a2.channels&#x3D;c1<br>分别详细设置 #source类型为网络字节流(数据来源的类型为字节流)<br>a2.source.r1.type&#x3D;exec<br>a2.source.r1.command&#x3D;tail -F &#x2F;opt&#x2F;temp&#x2F;flumetest.txt<br>command &#x3D; tail 收集文件最后的变化<br>设置类型为 logger 日志方式（发送的内容的存储方式）<br>a2.sinks.k1.type&#x3D;file_roll a2.sinks.k1.sink.directory&#x3D;&#x2F;opt&#x2F;temp<br>a2.sinks.k1.sink.rollinterval&#x3D;0<br>如果flumetest.txt中的文件发生变化，将会收集到temp中<br>内存进行数据缓存 a1.channels.c1.type&#x3D;memory<br>定义容量 a1.channels.c1.capacity&#x3D;1000<br>最大事务容量 a1.channels.c1.transactionCapacity&#x3D;100<br>建立关联<br>a1.sources.r1.channels&#x3D;c1 a1.sinks.k1.channel&#x3D;c1<br>2.在master上启动flume监听：(在bin下面启动)<br>.&#x2F;flume-ng agent -c conf -f ..&#x2F;conf&#x2F;file.conf -name a2 -Dflume.root.logger&#x3D;INFO,console<br>3.echo “bbbb” &gt;&gt;&#x2F;opt&#x2F;temp&#x2F;flumetest.txt</p>
+<p>4.查看变化的内容是否被检测<br>变化一次，将会生成一个新的文件，变化的内容会打印在里面<br><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/flume/flume8.png"> style&#x3D;”width:5.00069in;height:1.98194in” &#x2F;&gt;<br>将监听的内容上传至HDFS<br>收集配置文件：<br>vim conf&#x2F;hdfs.conf<br>定义当前 agent(数据收集器) 的名字为 a3，可以随意<br>定义 agent 中的 sources(数据来源) 名字为 r1 a3.sources &#x3D; r1<br>定义 agent 中的 sinks(数据存储) 组件叫做 k1 a3.sink&#x3D;k1<br>定义 agent 中的 channels(数据缓存) 组件叫 c1 a3.channels&#x3D;c1<br>分别详细设置<br>source类型为网络字节流(数据来源的类型为字节流)<br>a3.sources.r1.type&#x3D;exec<br>a3.sources.r1.command&#x3D;tail -F &#x2F;opt&#x2F;temp&#x2F;flumetest.txt<br>设置类型为hdfs（发送的内容的存储方式）<br>a3.sinks.k1.type&#x3D;hdfs<br>a3.sinks.k1.hdfs.path&#x3D;hdfs:&#x2F;&#x2F;master:50070&#x2F;input&#x2F;flume&#x2F;%y&#x2F;%m<br>a3.sinks.k1.hdfs.filePrefix&#x3D;events-</p>
+<p>a3.sinks.k1.hdfs.round&#x3D;true a3.sinks.k1.hdfs.roundValue&#x3D;40<br>a3.sinks.k1.hdfs.roundUnit&#x3D;second<br>a3.sinks.k1.hdfs.useLocalTimeStamp&#x3D;true<br>内存进行数据缓存<br>a3.channels.c1.type&#x3D;memory<br>定义容量 a3.channels.c1.capacity&#x3D;1000<br>最大事务容量 a3.channels.c1.transactionCapacity&#x3D;100<br>建立关联<br>a3.sources.r1.channels&#x3D;c1 a3.sinks.k1.channel&#x3D;c1<br>2.在master上启动flume监听：(在bin下面启动)<br>.&#x2F;flume-ng agent -c conf -f ..&#x2F;conf&#x2F;hdfs.conf -name a3 -Dflume.root.logger&#x3D;INFO,console<br>3.echo “hello word” &gt;&gt; flumetest.txt<br>然后去HDFS页面查看<br> <img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/flume/flume9.png"> style&#x3D;”width:5.00069in;height:3.06403in” &#x2F;&gt;<br>从虚拟机中查看文件<br>hdfs dfs -cat &#x2F;input&#x2F;flume&#x2F;21&#x2F;08&#x2F;events-.1630233437362<br><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/flume/flume10.png"> style&#x3D;”width:5.00069in;height:0.63833in” &#x2F;&gt;<br>出现乱码，在conf&#x2F;hdfs.conf文件中加入<br>a3.sinks.k1.hdfs.fileType&#x3D;DataStream<br><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/flume/flume11.png" style="width:5.00069in;height:0.71367in"><br>再次启动<br>.&#x2F;flume-ng agent -c conf -f ..&#x2F;conf&#x2F;hdfs.conf -name a3 -Dflume.root.logger&#x3D;INFO,console<br>然后HDFS中会再次生成一个新文件，再次查看即可</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover next lx-cover-sm" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/footer-l.min.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2024/05/31/MySQL%E5%9F%BA%E7%A1%80/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>MySQL</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover prev lx-cover-sm" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/footer-r.min.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2024/05/31/eclipse%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>eclipse...</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+
+<footer>
+  <div>
+  Copyright &copy; 2024.<a href="/">Hexo</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
+  </div>
+</footer>
+
+</div>
+
+<button class="hamburger hamburger--arrow-r" type="button" title="menu">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+</button>
+<div class="menu visibility">
+  <div class="menu-head">
+    <span class="layer">
+      <div class="col">
+        <div class="row for-pic">
+          <div class="profile-pic">
+            <a href="/"><img src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/avatar.min.jpeg" alt="Chnpng Wng"/></a>
+          </div>
+        </div>
+        <div class="row for-name">
+          <p>Chnpng Wng</p>
+          <span class="tagline">Hello, World!</span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <nav class="menu-container">
+  <ul class="menu-items">
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>Home</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+    
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-bookmark fa-fw"></i>Pages</span>
+        <ul>
+          <li><a href="/guestbook/">Guestbook</a></li>
+        <li><a href="/about/">About</a></li>
+        </ul>
+    </li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-link fa-fw"></i>Friends</span>
+        <ul>
+          <li> <a href="https://lx.js.org" target="_blank">Theme-Lx</a></li>
+        </ul>
+    </li>
+  </ul>
+  </nav>
+</div>
+
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/js/jquery.easing.min.js"></script>
+<script>
+(function () {
+	"use strict";
+	var goToTop = function() {
+		$(".js-gotop").on("click", function(event){
+			event.preventDefault();
+			$("html, body").animate({
+				scrollTop: $("html").offset().top
+			}, 500, "easeInOutExpo");
+			return false;
+		});
+		$(window).scroll(function(){
+			var $win = $(window);
+			if ($win.scrollTop() > 200) {
+				$(".js-top").addClass("active");
+			} else {
+				$(".js-top").removeClass("active");
+			}
+		});
+	};
+	$(function(){
+		goToTop();
+	});
+}());
+</script>
+
+
+</body>
+</html>

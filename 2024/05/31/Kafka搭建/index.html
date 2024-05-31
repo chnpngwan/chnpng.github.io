@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content=#58b77a>
+  <title>Kafka | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Chnpng Wng">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="referrer" content="no-referrer">
+  <script id="hexo-configurations">
+  var CONFIG = {
+    root: '/',
+    theme: 'hexo-theme-lx',
+    version: '0.4.4',
+    localsearch:{
+      "enable": false,
+      "trigger": "auto",
+      "top_n_per_article": 1,
+      "unescape": false,
+      "preload": false
+      },
+    path: 'null'
+  };
+</script>
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/css/main.min.css">
+  
+  <style type="text/css">
+    pre,
+    code {
+      font-family: 'Fira Code', monospace;
+    }
+    html {
+      font-family: sans-serif;
+    }
+    body {
+      font-family: sans-serif;
+    }
+    h1, h2, h3, h4, h5, figure {
+      font-family: sans-serif;
+    }
+    .menu-container{
+      font-family: sans-serif;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/js/jquery.jside.menu.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "",
+	     });
+	}); 
+	</script>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+<body>
+<div class="single">
+
+<div id="page">
+<div class="header">
+  <div id="lx-aside" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/post_cover.min.jpeg)" data-stellar-background-ratio="0.5">
+    <div class="overlay">
+      
+      <div class="page-title">
+        <div class="avatar"><a href="/"><img src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/avatar.min.jpeg" alt="Chnpng Wng"></a></div>
+        <span>2024-05-31</span>
+        <h2>Kafka</h2>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div id="lx-main-content">
+  <div class="lx-post">
+    <div class="lx-entry padding">
+      <div>
+        <p>安装kafka（启动前需要先zookeeper） </p>
+<p>1.上传kafka_2.12-2.4.1.tgz到&#x2F;opt&#x2F;soft</p>
+<p>2.解压 tar -xzvf kafka_2.12-2.4.1.tgz -C &#x2F;opt</p>
+<p>  重命名mv kafka_2.12-2.4.1.tgz kafka</p>
+<p>3.配置环境变量vi &#x2F;etc&#x2F;profile.d&#x2F;hadoop-eco.sh</p>
+<p>export KAFKA_HOME&#x3D;&#x2F;opt&#x2F;kafka</p>
+<p>export PATH&#x3D;$PATH:$KAFKA_HOME&#x2F;bin</p>
+<p>scp -r &#x2F;etc&#x2F;profile.d&#x2F;hadoop-eco.sh slave01:&#x2F;etc&#x2F;profile.d&#x2F;hadoop-eco.sh<br>hadoop-eco.sh</p>
+<p>scp -r &#x2F;etc&#x2F;profile.d&#x2F;hadoop-eco.sh slave02:&#x2F;etc&#x2F;profile.d&#x2F;hadoop-eco.sh<br>hadoop-eco.sh</p>
+<p>scp -r &#x2F;etc&#x2F;profile.d&#x2F;hadoop-eco.sh slave03:&#x2F;etc&#x2F;profile.d&#x2F;hadoop-eco.sh<br>hadoop-eco.sh</p>
+<p>source &#x2F;etc&#x2F;profile.d&#x2F;hadoop-eco.sh</p>
+<p>4.在kafka下面创建目录</p>
+<p>mkdir data mkdir logs</p>
+<p>5.修改config 目录下面的server.properties 配置文件</p>
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/kafka/kafka1.png" style="width:4.58403in;height:0.49333in"></p>
+<img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/kafka/kafka2.png" style="width:4.21069in;height:0.42in">
+
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/kafka/kafka3.png" style="width:4.59069in;height:0.77033in"></p>
+<p>6.更改kafka停止脚本</p>
+<p>Kafuka的bin目录下kafka-server-stop.sh有些问题，需要先修改一下官方提供的stop脚本，集群<br>中的每一台机器都要改（kafka里面的k是小写）</p>
+<p>原：</p>
+<p>PIDS&#x3D;$(ps ax | grep -i ‘kafka\Kafka’ | grep java | grep -v grep |<br>awk ‘{print $1}’)</p>
+<p>修改为：</p>
+<p>PIDS&#x3D;$(ps ax | grep -i ‘kafka’ | grep java | grep -v grep | awk<br>‘{print $1}’)</p>
+<p>7.在bin下面创建一键启动脚本kk_start_all.sh内容如下：</p>
+<p>for host in master slave01 slave02 do</p>
+<p>ssh $host “source<br>&#x2F;etc&#x2F;profile.d&#x2F;hadoop-eco.sh;&#x2F;opt&#x2F;kafka&#x2F;bin&#x2F;kafka-server-start.sh<br>-daemon &#x2F;opt&#x2F;kafka&#x2F;config&#x2F;server.properties”</p>
+<p>echo “$host kafka 服务正在启动…..”</p>
+<p>done</p>
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/kafka/kafka4.png" style="width:7.62431in;height:1.05833in"></p>
+<p>7.在bin下面创建一键停止脚本kk_stop_all.sh内容如下：</p>
+<p>for host in master slave01 slave02 do</p>
+<p>ssh $host “source &#x2F;etc&#x2F;profile;&#x2F;opt&#x2F;kafka&#x2F;bin&#x2F;kafka-server-stop.sh”<br>echo “$host kafka 服务正在停止…..”</p>
+<p>done</p>
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/kafka/kafka5.png" style="width:4.95236in;height:0.92833in"></p>
+<p>然后赋予两个文件权限</p>
+<p>chmod 777 kk_start_all.sh </p>
+<p>chmod 777 kk_stop_all.sh</p>
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/kafka/kafka6.png" style="width:3.22361in;height:0.947in"></p>
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/kafka/kafka7.png" style="width:2.64361in;height:1.07833in"></p>
+<p>8.拷贝到从机上面</p>
+<p>scp -r &#x2F;opt&#x2F;kafka slave01:&#x2F;opt&#x2F;kafka scp -r &#x2F;opt&#x2F;kafka<br>slave02:&#x2F;opt&#x2F;kafka scp -r &#x2F;opt&#x2F;kafka slave03:&#x2F;opt&#x2F;kafka</p>
+<img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/kafka/kafka8.png" style="width:1.55194in;height:0.69in">
+
+<p>9.修改01,02,03&#x2F;opt&#x2F;kafka&#x2F;config<br>的server.properties 01的改为1,02的改为2</p>
+<p>10.启动kafka（要先启动zookeeper） kk_start_all.sh</p>
+<p>没有编写脚本:kafka-server-start.sh -daemon<br>&#x2F;opt&#x2F;kafka&#x2F;config&#x2F;server.properties</p>
+<p>创建主题：(在bin下面用命令)</p>
+<p>.&#x2F;kafka-topics.sh –create \ &gt; –topic whj \</p>
+<p>&gt; –partitions 3 \</p>
+<p>&gt; –replication-factor 1 \</p>
+<p>&gt; –zookeeper master:2181,slave01:2181,slave02:2181</p>
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/kafka/kafka9.png" style="width:2.97528in;height:1.03033in"></p>
+<p>解析：</p>
+<p>&gt; –topic 主题名</p>
+<p>&gt; –partitions 分区数</p>
+<p>&gt; –replication-factor 副本数</p>
+<p>&gt; –zookeeper master:2181,slave01:2181,slave02:2181<br>在zookeeper集群</p>
+<p>查看主题(一行一行的输入) .&#x2F;kafka-topics.sh –list \</p>
+<p>–zookeeper master:2181,slave01:2181,slave02:2181</p>
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/kafka/kafka10.png" style="width:3.48069in;height:0.99333in"></p>
+<p>删除主题：</p>
+<p>.&#x2F;kafka-topics.sh –zookeeper localhost:2181 –delete –topic plc</p>
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/kafka/kafka11.png" style="width:3.21361in;height:0.93167in"></p>
+<p>需要server.properties 中设置 delete.topic.enable&#x3D;true 否则只标记删除</p>
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/kafka/kafka12.png" style="width:3.45403in;height:0.67167in"></p>
+<p>修改分区数：</p>
+<p>kafka-topics.sh –bootstrap-server localhost:9092 –alter –topic whj<br>–partitions 5</p>
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/kafka/kafka13.png" style="width:3.36028in;height:1.73694in"></p>
+<p>注意：一般分区数不超过主机数量</p>
+<p>查看分区的详细信息：</p>
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/kafka/kafka14.png" style="width:5.90069in;height:0.52in">kafka-topics.sh<br>–bootstrap-server master:9092 –describe –topic whj topic-create</p>
+<p>kafka主题与分区学习：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/zqf787351070/article/details/130291340"><u>https://blog.csdn.net/zqf787351070/article/details/130291340</u></a></p>
+<p>开启生产者（master）</p>
+<p>kafka-console-producer.sh –broker-list master:9092 –topic whj</p>
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/kafka/kafka15.png" style="width:4.15069in;height:0.532in"></p>
+<p>在另一台主机上创建消费者 .&#x2F;kafka-console-consumer.sh\</p>
+<blockquote>
+<p>–from-beginning –topic whj\</p>
+<p>–bootstrap-server master:9092,slave01:9092,slave02:9092</p>
+<p><img src="https://gitee.com/chnpngwng/typora-image/raw/master/assets/kafka/kafka16.png" style="width:5.05903in;height:1.53028in"></p>
+</blockquote>
+<p>kafka消费命令学习<br><a target="_blank" rel="noopener" href="http://www.mobiletrain.org/about/BBS/119918.html"><u>http://www.mobiletrain.org/about/BBS/119918.html</u></a></p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover next lx-cover-sm" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/footer-l.min.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2024/05/31/IDEA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-2023.1.1%E7%89%88%E6%9C%AC/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>IDEA使用教程</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover prev lx-cover-sm" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/footer-r.min.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2024/05/31/MySQL%E5%9F%BA%E7%A1%80/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>MySQL</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+
+<footer>
+  <div>
+  Copyright &copy; 2024.<a href="/">Hexo</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
+  </div>
+</footer>
+
+</div>
+
+<button class="hamburger hamburger--arrow-r" type="button" title="menu">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+</button>
+<div class="menu visibility">
+  <div class="menu-head">
+    <span class="layer">
+      <div class="col">
+        <div class="row for-pic">
+          <div class="profile-pic">
+            <a href="/"><img src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/avatar.min.jpeg" alt="Chnpng Wng"/></a>
+          </div>
+        </div>
+        <div class="row for-name">
+          <p>Chnpng Wng</p>
+          <span class="tagline">Hello, World!</span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <nav class="menu-container">
+  <ul class="menu-items">
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>Home</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+    
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-bookmark fa-fw"></i>Pages</span>
+        <ul>
+          <li><a href="/guestbook/">Guestbook</a></li>
+        <li><a href="/about/">About</a></li>
+        </ul>
+    </li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-link fa-fw"></i>Friends</span>
+        <ul>
+          <li> <a href="https://lx.js.org" target="_blank">Theme-Lx</a></li>
+        </ul>
+    </li>
+  </ul>
+  </nav>
+</div>
+
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/js/jquery.easing.min.js"></script>
+<script>
+(function () {
+	"use strict";
+	var goToTop = function() {
+		$(".js-gotop").on("click", function(event){
+			event.preventDefault();
+			$("html, body").animate({
+				scrollTop: $("html").offset().top
+			}, 500, "easeInOutExpo");
+			return false;
+		});
+		$(window).scroll(function(){
+			var $win = $(window);
+			if ($win.scrollTop() > 200) {
+				$(".js-top").addClass("active");
+			} else {
+				$(".js-top").removeClass("active");
+			}
+		});
+	};
+	$(function(){
+		goToTop();
+	});
+}());
+</script>
+
+
+</body>
+</html>

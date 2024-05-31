@@ -4,7 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme-color" content=#58b77a>
-  <title>eclipse下载与安装 | Hexo</title>
+  <title>tomcat安装及环境配置 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Chnpng Wng">
   <meta name="keywords" content="">
@@ -75,7 +75,7 @@
       <div class="page-title">
         <div class="avatar"><a href="/"><img src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/avatar.min.jpeg" alt="Chnpng Wng"></a></div>
         <span>2024-05-31</span>
-        <h2>eclipse下载与安装</h2>
+        <h2>tomcat安装及环境配置</h2>
         
         
       </div>
@@ -86,21 +86,33 @@
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        <h2 id="一、eclipse下载"><a href="#一、eclipse下载" class="headerlink" title="一、eclipse下载"></a><strong>一、eclipse下载</strong></h2><p><a target="_blank" rel="noopener" href="https://www.eclipse.org/"><strong>https://www.eclipse.org/</strong></a></p>
-<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/020.png" alt="clipboard.png"></p>
-<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/021.png" alt="clipboard.png"></p>
-<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/023.png" alt="clipboard.png"></p>
-<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/024.png" alt="clipboard.png"></p>
-<h2 id="二、eclipse安装"><a href="#二、eclipse安装" class="headerlink" title="二、eclipse安装"></a><strong>二、eclipse安装</strong></h2><p>下载的软件是解压版的，将压缩包解压之后就可以用</p>
-<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/025.png" alt="clipboard.png"></p>
-<h2 id="三、eclipse常用配置"><a href="#三、eclipse常用配置" class="headerlink" title="三、eclipse常用配置"></a><strong>三、eclipse常用配置</strong></h2><p><strong>1、eclipse配置JDK</strong></p>
-<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/026.png" alt="clipboard.png"></p>
-<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/027.png" alt="clipboard.png"></p>
-<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/028.png" alt="clipboard.png"></p>
-<p><strong>2、eclipse设置代码自动补全</strong></p>
-<p><strong>在Auto activation triggers for Java后面加上：</strong></p>
-<p>.abcdefghijklmnopqrstuvwsyzABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
-<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/029.png" alt="clipboard.png"></p>
+        <h1 id="前提条件要有Java环境"><a href="#前提条件要有Java环境" class="headerlink" title="前提条件要有Java环境"></a>前提条件要有Java环境</h1><h2 id="一、tomcat下载"><a href="#一、tomcat下载" class="headerlink" title="一、tomcat下载"></a><strong>一、tomcat下载</strong></h2><p>官网地址：<a target="_blank" rel="noopener" href="https://tomcat.apache.org/">Apache Tomcat® - Welcome!</a></p>
+<p>选择Tomcat8版本（自己随意，这里我是选择的8版本）</p>
+<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/030.jpg" alt="clipboard.png"></p>
+<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/031.jpg" alt="clipboard.png"></p>
+<h2 id="二、Tomcat配置环境变量"><a href="#二、Tomcat配置环境变量" class="headerlink" title="二、Tomcat配置环境变量"></a>二、Tomcat配置环境变量</h2><p>首先右击此电脑，属性，打开高级系统设置：</p>
+<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/014.png" alt="clipboard.png"></p>
+<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/015.png" alt="clipboard.png"></p>
+<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/016.png" alt="clipboard.png"></p>
+<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/034.jpg" alt="clipboard.png"></p>
+<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/035.jpg" alt="clipboard.png"></p>
+<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/036.jpg" alt="clipboard.png"></p>
+<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/037.jpg" alt="clipboard.png"></p>
+<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/038.jpg" alt="clipboard.png"></p>
+<h2 id="三、验证Tomcat配置是否成功"><a href="#三、验证Tomcat配置是否成功" class="headerlink" title="三、验证Tomcat配置是否成功"></a><strong>三、</strong>验证Tomcat配置是否成功</h2><p>首先win+R输入cmd回车，然后再DOS窗口输入startup.bat回车。</p>
+<p>之后会出现Tomcat启动窗口。</p>
+<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/039.jpg" alt="clipboard.png"></p>
+<p>代表配置成功。</p>
+<p>如果出现报错或者一闪而过，可能是端口号被占用。Tomcat默认窗口时8080。</p>
+<p>可以尝试重启电脑，再启动Tomcat试试。不行的话，就修改Tomcat端口号。</p>
+<p>如果配置成功，打开浏览器，输入<a target="_blank" rel="noopener" href="http://localhost:8080/">http://localhost:8080/</a></p>
+<p>（刚才那个黑窗口一定不能关闭，否则肯定打不开这个页面）</p>
+<p>如果出现如下图，则表示成功。</p>
+<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/040.jpg" alt="clipboard.png"></p>
+<h2 id="四、在-Eclipse-中配置-Tomcat"><a href="#四、在-Eclipse-中配置-Tomcat" class="headerlink" title="四、在 Eclipse 中配置 Tomcat"></a>四、在 Eclipse 中配置 Tomcat</h2><p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/041.jpg" alt="clipboard.png"></p>
+<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/042.jpg" alt="clipboard.png"></p>
+<p>指定服务器路径和部署路径</p>
+<p><img src="https://gitee.com/ChnpngWang/typora-image/raw/master/assets/Java/043.jpg" alt="clipboard.png"></p>
 
       </div>
     </div>
@@ -109,12 +121,12 @@
 <div class="lx-navigation">
 	<div class="lx-cover next lx-cover-sm" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/footer-l.min.jpeg)">
 		<div class="overlay"></div>
-		<a class="copy" href="/2024/05/31/flume%E6%90%AD%E5%BB%BA/">
+		<a class="copy" href="/2024/05/31/maven%E6%95%99%E7%A8%8B/">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Next</span>
-						<h3>flume</h3>
+						<h3>Maven安装...</h3>
 					</div>
 				</div>
 			</div>
@@ -122,12 +134,12 @@
 	</div>
         <div class="lx-cover prev lx-cover-sm" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/footer-r.min.jpeg)">
 		<div class="overlay"></div>
-		<a class="copy" href="/2024/05/31/jdk%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/">
+		<a class="copy" href="#">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Prev</span>
-						<h3>jdk安装及环...</h3>
+						<h3>No older post</h3>
 					</div>
 				</div>
 			</div>
